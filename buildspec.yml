@@ -3,9 +3,9 @@ version: 0.1
 phases:
   install:
     commands:
-      - echo intsalling ngnix
+      - echo intsalling nginx
       - sudo apt-get update
-      - sudo apt-get install ngnix -y
+      - sudo apt-get install nginx -y
   build:
     commands:
       - echo building on `date`
@@ -13,7 +13,7 @@ phases:
 
   post_build:
     commands:
-      - echo confiugring Ngnix
+      - echo confiugring Nginx
 
 
 artifacts:
