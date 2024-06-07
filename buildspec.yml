@@ -1,0 +1,21 @@
+version:0.1
+
+phases:
+  intsall:
+    commands:
+      - echo intsalling ngnix
+      - sudo apt-get update
+      - sudo apt-get install ngnix -y
+  build:
+    commands:
+      - echo building on `date`
+      - cp index.html /var/www/html/
+
+  post_build:
+    commands:
+      - echo confiugring Ngnix
+
+
+artifacts:
+  files:
+    /var/www/html/index.html
