@@ -4,14 +4,6 @@ os: linux
 files:
   - source: index.html
     destination: /var/www/html/
-  - source: appspec.yml
-    destination: /home/ubuntu/
-  - source: buildspec.yml
-    destination: /home/ubuntu/
-  - source: scripts/install_nginx.sh
-    destination: /home/ubuntu/scripts/
-  - source: scripts/start_nginx.sh
-    destination: /home/ubuntu/scripts/
 
 hooks:
   # BeforeInstall:
@@ -19,7 +11,7 @@ hooks:
   #     timeout: 300
   #     runas: root
   AfterInstall:
-    - location: /home/ubuntu/scripts/install_nginx.sh
+    - location: /scripts/install_nginx.sh
       timeout: 300
       runas: root
 
