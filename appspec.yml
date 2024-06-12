@@ -1,21 +1,27 @@
 version: 0.0
 os: linux
 
-Files:
-  - source: /var/www/html/index.html
-    destination: /var/www/html
+files:
+  - source: index.html
+    destination: /var/www/html/
+  - source: appspec.yml
+    destination: /home/ubuntu/
+  - source: buildspec.yml
+    destination: /home/ubuntu/
+  - source: scripts/install_nginx.sh
+    destination: /home/ubuntu/scripts/
+  - source: scripts/start_nginx.sh
+    destination: /home/ubuntu/scripts/
 
 hooks:
-  # BeforeInstall:
-  #   - location: scripts/before_install.sh
-  #     timeout: 300
-  #     runas: root
-  AfterInstall:
-    - location: scripts/install_nginx.sh
+  BeforeInstall:
+    - location: /home/ubuntu/scripts/install_nginx.sh
       timeout: 300
       runas: root
-
-  ApplicationStart:
+  AfterInstall:
+    - location: /home/ubuntu/scripts/start_nginx.sh
+      timeout: 300
+      runas: root
     - location: scripts/start_nginx.sh
       timeout: 300
       runas: root
