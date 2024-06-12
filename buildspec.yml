@@ -21,5 +21,4 @@ artifacts:
     - /var/www/html/index.html
     - appspec.yml
     - buildspec.yml
-    - /**/*
 
