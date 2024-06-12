@@ -21,6 +21,7 @@ artifacts:
     - /var/www/html/index.html
     - appspec.yml
     - buildspec.yml
-    - scripts
+    - scripts/install_nginx.sh
+    - scripts/start_nginx.sh
 
 
