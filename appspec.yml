@@ -14,14 +14,16 @@ files:
     destination: /home/ubuntu/scripts/
 
 hooks:
-  BeforeInstall:
+  # BeforeInstall:
+  #   - location: /home/ubuntu/scripts/install_nginx.sh
+  #     timeout: 300
+  #     runas: root
+  AfterInstall:
     - location: /home/ubuntu/scripts/install_nginx.sh
       timeout: 300
       runas: root
-  AfterInstall:
-    - location: /home/ubuntu/scripts/start_nginx.sh
-      timeout: 300
-      runas: root
+
+  ApplicationStart:
     - location: scripts/start_nginx.sh
       timeout: 300
       runas: root
