@@ -4,6 +4,8 @@ phases:
   install:
     commands:
       - echo intsalling nginx
+      - sudo apt-get clean
+      - sudo rm -rf /var/lib/apt/lists/*
       - sudo apt-get update
       - sudo apt-get install nginx -y
   build:
