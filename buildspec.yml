@@ -1,4 +1,4 @@
-version: 0.0
+version: 0.1
 
 phases:
   install:
@@ -21,4 +21,5 @@ artifacts:
     - /var/www/html/index.html
     - appspec.yml
     - buildspec.yml
+
 
